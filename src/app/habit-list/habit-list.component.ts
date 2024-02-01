@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable, switchMap} from "rxjs";
-import {HabitService} from "../habit.service";
-import {Habit} from "../habit";
+import {HabitService} from "../services/habit.service";
+import {Habit} from "../dto/habit";
 
 @Component({
   selector: 'app-habit-list',

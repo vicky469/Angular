@@ -1,16 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: `
     <div class="container">
       <h1>{{ title }}</h1>
-      <nav>
-        <ul>
-          <li><a routerLink="/"> Home</a></li>
-          <li><a routerLink="/account">Account</a></li>
-        </ul>
-      </nav>
+      <app-nav-bar></app-nav-bar>
       <router-outlet></router-outlet>
     </div>
   `,

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, tap} from "rxjs";
-import {Habit} from "./habit";
+import {Habit} from "../dto/habit";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({

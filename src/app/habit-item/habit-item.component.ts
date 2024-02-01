@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Habit} from "../habit";
+import {Habit} from "../dto/habit";
 
 @Component({
   selector: 'app-habit-item',

@@ -1,0 +1,15 @@
+Hi {{ user?.username }}
+
+<ul>
+  <li>
+    <a class="nav-link"
+       routerLinkActive="active"
+       [routerLink]="['/home/1/actors']">Actors</a>
+  </li>
+  <li>
+    <a class="nav-link"
+       routerLinkActive="active"
+       [routerLink]="['/workspace']">Workspace</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>

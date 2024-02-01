@@ -8,14 +8,26 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HabitFormComponent} from './habit-form/habit-form.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
+import {UserActorListComponent} from './actorsUser-list/actorsUser-list.component';
+import {ActorComponent} from './actor/actor.component';
+import {ActorDetailComponent} from './actor-detail/actor-detail.component';
+import {WorkspaceComponent} from './workspace/workspace.component';
+import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {HomeComponent} from './home/home.component';
-import {AccountComponent} from './account/account.component';
-import { AccountDetailComponent } from './account-detail/account-detail.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'account', component: AccountComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {
+    path: 'home/:id',
+    component: HomeComponent,
+    children: [
+      {path: 'actors', component: UserActorListComponent},
+      {path: 'actor/:id', component: ActorDetailComponent},
+    ]
+  },
+  // {path: 'actors', component: UserActorListComponent},
+  {path: 'habits', component: HabitListComponent},
+  {path: 'workspace', component: WorkspaceComponent},
 ];
 
 @NgModule({
@@ -25,15 +37,20 @@ const routes: Routes = [
     HabitListComponent,
     HabitItemComponent,
     HabitFormComponent,
-    HomeComponent,
-    AccountComponent,
-    AccountDetailComponent
+    UserActorListComponent,
+    ActorComponent,
+    ActorDetailComponent,
+    WorkspaceComponent,
+    NavBarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      paramsInheritanceStrategy: 'always',
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
